@@ -69,7 +69,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ github.token }}
       - name: Inspect Image
-        run: docker image inspect ${{ needs.build.outputs.image }}
+        run: |
+          docker pull ${{ needs.build.outputs.image }}
+          docker image inspect ${{ needs.build.outputs.image }}
 ```
 
 [build-push-action]: https://github.com/docker/build-push-action
