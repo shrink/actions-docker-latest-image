@@ -52,7 +52,7 @@ jobs:
         id: latest
         uses: shrink/actions-docker-latest-image@v1
         with:
-          repository: ${{ github.repository }}/example
+          repository: docker.pkg.github.com/${{ github.repository }}/example
       - name: Output Image
         id: output-image
         run: echo "::set-output name=image::${{ steps.latest.outputs.image }}"
@@ -67,7 +67,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ github.token }}
       - name: Inspect Image
         run: docker image inspect ${{ needs.build.outputs.image }}
 ```
