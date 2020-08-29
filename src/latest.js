@@ -15,7 +15,7 @@ async function run() {
     });
 
     if (tag === '') {
-      core.setFailed(`No tags found in ${repository}.`);
+      core.setFailed(`No images found in ${repository} -- cannot continue.`);
     }
 
     core.setOutput('image', `${repository}:${tag}`);

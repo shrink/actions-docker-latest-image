@@ -27,7 +27,7 @@ jobs:
         id: latest
         uses: ./
         with:
-          repository: ${{ github.repository }}/example
+          repository: docker.pkg.github.com/${{ github.repository }}/example
       - name: Output Image
         id: output-image
         run: echo "::set-output name=image::${{ steps.latest.outputs.image }}"
