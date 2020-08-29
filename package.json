@@ -1,0 +1,34 @@
+{
+  "name": "@shrink/actions-docker-latest-image",
+  "version": "1.0.0",
+  "description": "Get latest Docker Image in a Repository",
+  "author": "Samuel Ryan <sam@samryan.co.uk>",
+  "homepage": "https://github.com/shrink/actions-docker-latest-image#readme",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/latest.js",
+    "lint": "eslint 'src/**.js' --fix",
+    "commit": "npm run-script lint && npm run-script build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrink/actions-docker-latest-image.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shrink/actions-docker-latest-image/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  }
+}
