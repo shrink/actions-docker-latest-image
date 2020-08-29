@@ -14,6 +14,10 @@ async function run() {
       },
     });
 
+    if (tag === '') {
+      core.setFailed(`No tags found in ${repository}.`);
+    }
+
     core.setOutput('image', `${repository}:${tag}`);
     core.setOutput('tag', tag);
   } catch (error) {
