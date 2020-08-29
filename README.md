@@ -36,7 +36,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      image: ${{ steps.output-image.outputs.image }}
+      image: ${{ steps.latest.outputs.image }}
     steps:
       - uses: actions/checkout@v2
       - name: Build And Publish Image
@@ -53,9 +53,6 @@ jobs:
         uses: shrink/actions-docker-latest-image@v1
         with:
           repository: docker.pkg.github.com/${{ github.repository }}/example
-      - name: Output Image
-        id: output-image
-        run: echo "::set-output name=image::${{ steps.latest.outputs.image }}"
   inspect:
     needs: build
     runs-on: ubuntu-latest
