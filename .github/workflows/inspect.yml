@@ -25,7 +25,7 @@ jobs:
           push: true
       - name: Get Latest Image
         id: latest
-        uses: shrink/actions-docker-latest-image@v1
+        uses: ./
         with:
           repository: ${{ github.repository }}/example
       - name: Output Image
