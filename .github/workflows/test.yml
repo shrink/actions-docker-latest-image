@@ -1,0 +1,19 @@
+name: Test Image Tag
+
+on: [push]
+
+jobs:
+  get-tag:
+    runs-on: ubuntu-latest
+    name: Get Latest Image Tag
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Latest
+        id: latest
+        uses: ./
+        with:
+          repository: 'alpine'
+      - run: |
+          echo "::debug::Image is ${{ steps.latest.outputs.image }}"
+          echo "::debug::Tag is ${{ steps.latest.outputs.tag }}"

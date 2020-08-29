@@ -1,0 +1,18 @@
+name: 'Docker Latest Image'
+description: 'Latest Docker Image in a Repository'
+author: 'Samuel Ryan <sam@samryan.co.uk>'
+inputs:
+  repository:
+    description: 'Docker Image Repository'
+    required: true
+outputs:
+  image:
+    description: 'Docker Image'
+  tag:
+    description: 'Image Tag'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'sun'
+  color: 'blue'
